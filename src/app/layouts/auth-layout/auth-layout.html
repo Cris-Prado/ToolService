@@ -1,0 +1,21 @@
+<main>
+  <section class="form">
+    <h1>{{ title}}</h1>
+    <small>{{ subtitle }}</small>
+    <button class="btn btn-google">
+      <img src="icon-google.svg" alt="Google icon">
+      Sign in with Google
+    </button>
+    <ng-content></ng-content>
+    <button class="btn btn-primary">{{btnPrimary}}</button>
+    <div class="divider">
+      <hr>
+      <span>or</span>
+      <hr>
+    </div>
+    <button class="btn btn-secondary">{{btnSecondary}}</button>
+  </section>
+  <section class="image">
+    <img src="auth-image.svg" alt="Authentication image">
+  </section>
+</main>

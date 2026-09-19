@@ -1,0 +1,14 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-auth-layout',
+  imports: [],
+  templateUrl: './auth-layout.html',
+  styleUrl: './auth-layout.css',
+})
+export class AuthLayout {
+  @Input() title: string = '';
+  @Input() subtitle: string = '';
+  @Input() btnPrimary: string = '';
+  @Input() btnSecondary: string = '';
+}
