@@ -1,47 +1,66 @@
 <app-auth-layout
   title="Registrar"
   subtitle="Crie uma nova conta"
-  btnPrimary="Registre-se"
   footerText="Já tem uma conta?"
   footerLinkText="Faça login"
   footerLink="/login"
 >
-  <form action="" class="formulario">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="register()"
+    class="formulario"
+  >
     <app-input-label
-     label="Usuário"
+      label="Usuário"
       type="text"
-      name="user"
-      id="user"
-      placeholder="Digite seu usuário"
+      formControlName="name"
+      name="name"
+      id="name"
+      placeholder="Digite seu nome"
     >
-    <app-icon [name]="'user'"></app-icon>
+      <app-icon name="user"></app-icon>
     </app-input-label>
+
     <app-input-label
-     label="Email"
+      label="E-mail"
       type="email"
+      formControlName="email"
       name="email"
       id="email"
-      placeholder="Digite seu email"
+      placeholder="Digite seu e-mail"
     >
-    <app-icon [name]="'mail'"></app-icon>
+      <app-icon name="mail"></app-icon>
     </app-input-label>
+
     <app-input-label
-     label="Senha"
+      label="Senha"
       type="password"
+      formControlName="password"
       name="password"
       id="password"
       placeholder="Digite sua senha"
     >
-    <app-icon [name]="'lock'"></app-icon>
+      <app-icon name="lock"></app-icon>
     </app-input-label>
-    <app-input-label
-     label="Confirmar senha"
-      type="password"
-      name="confirm-password"
-      id="confirm-password"
-      placeholder="Confirme sua senha"
+
+    @if (errorMessage) {
+      <p class="message error">
+        {{ errorMessage }}
+      </p>
+    }
+
+    @if (successMessage) {
+      <p class="message success">
+        {{ successMessage }}
+      </p>
+    }
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loading"
     >
-    <app-icon [name]="'lock'"></app-icon>
-    </app-input-label>
+      {{ loading ? 'Cadastrando...' : 'Registre-se' }}
+    </button>
   </form>
 </app-auth-layout>

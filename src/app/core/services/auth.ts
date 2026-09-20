@@ -1,9 +1,13 @@
 import { Injectable, signal } from '@angular/core';
-import { Session, User } from '@supabase/supabase-js';
+import {
+  Session,
+  User
+} from '@supabase/supabase-js';
+
 import { supabase } from '../supabase/supabase.client';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class Auth {
   private readonly _user = signal<User | null>(null);
@@ -16,16 +20,32 @@ export class Auth {
 
   constructor() {
     this.initializeSession();
-  }private async initializeSession(): Promise<void> {
-    const { data, error } = await supabase.auth.getSession();
+  }
 
-    if (error) {
-      console.error('Erro ao recuperar sessão:', error.message);
+  private async initializeSession(): Promise<void> {
+    try {
+      const { data, error } =
+        await supabase.auth.getSession();
+
+      if (error) {
+        console.error(
+          'Erro ao recuperar sessão:',
+          error.message
+        );
+
+        return;
+      }
+
+      this._session.set(data.session);
+      this._user.set(data.session?.user ?? null);
+    } catch (error) {
+      console.error(
+        'Erro inesperado ao iniciar sessão:',
+        error
+      );
+    } finally {
+      this._loading.set(false);
     }
-
-    this._session.set(data.session);
-    this._user.set(data.session?.user ?? null);
-    this._loading.set(false);
 
     supabase.auth.onAuthStateChange((_event, session) => {
       this._session.set(session);
@@ -33,10 +53,15 @@ export class Auth {
     });
   }
 
-  async register(name: string, email: string, password: string) {
+  async register(
+    name: string,
+    email: string,
+    password: string
+  ) {
     return await supabase.auth.signUp({
       email,
       password,
+
       options: {
         data: {
           name
@@ -45,36 +70,40 @@ export class Auth {
     });
   }
 
-  async login(email: string, password: string) {
+  async login(
+    email: string,
+    password: string
+  ) {
     return await supabase.auth.signInWithPassword({
       email,
       password
     });
   }
 
-  async logout() {
-    return await supabase.auth.signOut();
+  async loginWithGoogle() {
+    return await supabase.auth.signInWithOAuth({
+      provider: 'google',
+
+      options: {
+        redirectTo:
+          `${window.location.origin}/auth/callback`,
+
+        queryParams: {
+          prompt: 'select_account'
+        }
+      }
+    });
+  }
+
+  async getSession() {
+    return await supabase.auth.getSession();
   }
 
   async getUser() {
-    const { data, error } = await supabase.auth.getUser();
-
-    if (error) {
-      return null;
-    }
-
-    return data.user;
+    return await supabase.auth.getUser();
   }
 
-  async recoverPassword(email: string) {
-    return await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/nova-senha`
-    });
-  }
-
-  async updatePassword(newPassword: string) {
-    return await supabase.auth.updateUser({
-      password: newPassword
-    });
+  async logout() {
+    return await supabase.auth.signOut();
   }
 }

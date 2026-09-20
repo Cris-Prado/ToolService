@@ -1,6 +1,27 @@
-.formulario{
+.formulario {
   display: flex;
   flex-direction: column;
-  gap: .1rem;
+  gap: .5rem;
   width: 100%;
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    color: var(--input-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: var(--input-bg);
+    margin-top: 1rem;
+
+
+    &:hover {
+      background-color: #ecebebd7;
+      box-shadow: var(--shadow-md);
+    }
+  }
 }

@@ -12,4 +12,16 @@
     </button>
   </div>
 
+  <div class="logout">
+    @if (auth.user(); as user) {
+    <span>
+      Olá, {{ user.user_metadata['name'] ?? user.email }}
+    </span>
+    }
+
+    <button type="button" (click)="logout()">
+      Sair
+    </button>
+  </div>
+
 </nav>

@@ -1,0 +1,8 @@
+.callback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  color: #1f1f1f;
+  background-color: #f1eadf;
+}

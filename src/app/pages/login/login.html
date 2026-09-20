@@ -5,31 +5,63 @@
   footerText="Não tem uma conta?"
   footerLinkText="Cadastre-se aqui"
   footerLink="/register"
+>
+  <app-btn-google
+    [loading]="googleLoading"
+    (googleClick)="loginWithGoogle()"
+  />
+
+  @if (errorMessage) {
+    <p class="error-message">
+      {{ errorMessage }}
+    </p>
+  }
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="login()"
+    class="formulario"
   >
-  <form action="" class="formulario">
     <app-input-label
-      label="Email"
+      label="E-mail"
       type="email"
+      formControlName="email"
       name="email"
       id="email"
-      placeholder="Digite seu email">
+      placeholder="Digite seu e-mail"
+    >
       <app-icon name="mail"></app-icon>
     </app-input-label>
 
     <app-input-label
       label="Senha"
       type="password"
+      formControlName="password"
       name="password"
       id="password"
-      placeholder="Digite sua senha">
+      placeholder="Digite sua senha"
+    >
       <app-icon name="lock"></app-icon>
     </app-input-label>
+
     <div class="remember">
       <input
         type="checkbox"
-        id="login-remember"
-        formControlName="rememberMe" />
-      <label for="login-remember">Lembrar-me</label>
+        id="rememberMe"
+        formControlName="rememberMe"
+      />
+
+      <label for="rememberMe">
+        Lembrar-me
+      </label>
     </div>
+
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="form.invalid || loading"
+    >
+      {{ loading ? 'Entrando...' : 'Entrar' }}
+    </button>
   </form>
 </app-auth-layout>

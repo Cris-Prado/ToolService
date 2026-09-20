@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { BtnGoogle } from '../../components/btn-google/btn-google';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-auth-layout',
-  imports: [BtnGoogle, RouterLink],
+  imports: [ RouterLink],
   templateUrl: './auth-layout.html',
   styleUrl: './auth-layout.css',
 })
