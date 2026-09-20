@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-label',
@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './input-label.css',
 })
 export class InputLabel {
-  label: string = '';
-  icon: string = '';
-  type: string = 'text';
-  name: string = '';
-  id: string = '';
-  placeholder: string = '';
+  @Input() placeholder: string = "";
+  @Input() label: string = "";
+  @Input() name: string = '';
+  @Input() id: string = '';
+  @Input() inputName: string = '';  
+  @Input() type: string = 'text';
 }

@@ -1,0 +1,101 @@
+:root {
+  /* =========================
+     BACKGROUNDS
+  ========================== */
+  --bg-primary: #F5F1E8;       /* Bege claro - fundo principal */
+  --bg-secondary: #EAE2D6;     /* Bege secundário */
+  --bg-card: #FFFFFF;          /* Cards */
+  --bg-dark: #181714;          /* Preto suave */
+  --bg-dark-secondary: #25231F;
+
+  /* =========================
+     TEXTOS
+  ========================== */
+  --text-primary: #181714;     /* Texto principal */
+  --text-secondary: #625E56;   /* Texto secundário */
+  --text-muted: #918B82;       /* Texto discreto */
+  --text-light: #FFFFFF;       /* Texto sobre fundo escuro */
+
+  /* =========================
+     CORES PRINCIPAIS
+  ========================== */
+  --primary: #181714;          /* Preto */
+  --primary-hover: #302E29;
+
+  --secondary: #D8CBB8;        /* Bege */
+  --secondary-hover: #C8B9A4;
+
+  --accent: #B89B72;           /* Bege/dourado elegante */
+  --accent-hover: #A38660;
+
+  /* =========================
+     BORDAS
+  ========================== */
+  --border-primary: #DED6CA;
+  --border-secondary: #C8BFB2;
+  --border-dark: #34312C;
+
+  /* =========================
+     INPUTS
+  ========================== */
+  --input-bg: #FFFFFF;
+  --input-border: #D8D0C5;
+  --input-text: #181714;
+  --input-placeholder: #9B958D;
+  --input-focus: #B89B72;
+
+  /* =========================
+     ESTADOS
+  ========================== */
+  --success: #557A5A;
+  --warning: #C79545;
+  --danger: #B5524D;
+  --info: #5D7185;
+
+  /* =========================
+     SOMBRAS
+  ========================== */
+  --shadow-sm: 0 2px 8px rgba(24, 23, 20, 0.06);
+  --shadow-md: 0 6px 20px rgba(24, 23, 20, 0.10);
+  --shadow-lg: 0 12px 35px rgba(24, 23, 20, 0.14);
+
+  /* =========================
+     FONTES
+  ========================== */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  /* =========================
+     TAMANHO DAS FONTES
+  ========================== */
+  --font-xs: 0.75rem;      /* 12px */
+  --font-sm: 0.875rem;     /* 14px */
+  --font-md: 1rem;         /* 16px */
+  --font-lg: 1.125rem;     /* 18px */
+  --font-xl: 1.5rem;       /* 24px */
+  --font-2xl: 2rem;        /* 32px */
+  --font-3xl: 2.5rem;      /* 40px */
+
+  /* =========================
+     PESO DAS FONTES
+  ========================== */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* =========================
+     BORDER RADIUS
+  ========================== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* =========================
+     TRANSIÇÕES
+  ========================== */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}

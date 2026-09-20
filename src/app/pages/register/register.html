@@ -1,0 +1,47 @@
+<app-auth-layout
+  title="Registrar"
+  subtitle="Crie uma nova conta"
+  btnPrimary="Registre-se"
+  footerText="Já tem uma conta?"
+  footerLinkText="Faça login"
+  footerLink="/login"
+>
+  <form action="" class="formulario">
+    <app-input-label
+     label="Usuário"
+      type="text"
+      name="user"
+      id="user"
+      placeholder="Digite seu usuário"
+    >
+    <app-icon [name]="'user'"></app-icon>
+    </app-input-label>
+    <app-input-label
+     label="Email"
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Digite seu email"
+    >
+    <app-icon [name]="'mail'"></app-icon>
+    </app-input-label>
+    <app-input-label
+     label="Senha"
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Digite sua senha"
+    >
+    <app-icon [name]="'lock'"></app-icon>
+    </app-input-label>
+    <app-input-label
+     label="Confirmar senha"
+      type="password"
+      name="confirm-password"
+      id="confirm-password"
+      placeholder="Confirme sua senha"
+    >
+    <app-icon [name]="'lock'"></app-icon>
+    </app-input-label>
+  </form>
+</app-auth-layout>

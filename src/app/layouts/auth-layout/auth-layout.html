@@ -1,21 +1,26 @@
-<main>
-  <section class="form">
-    <h1>{{ title}}</h1>
-    <small>{{ subtitle }}</small>
-    <button class="btn btn-google">
-      <img src="icon-google.svg" alt="Google icon">
-      Sign in with Google
-    </button>
-    <ng-content></ng-content>
-    <button class="btn btn-primary">{{btnPrimary}}</button>
-    <div class="divider">
-      <hr>
-      <span>or</span>
-      <hr>
+<main class="main">
+  <div class="container">
+    <section class="form">
+      <div class="form-text">
+        <h1>{{ title}}</h1>
+        <small>{{ subtitle }}</small>
+      </div>
+      <div class="btn-google">
+        <app-btn-google></app-btn-google>
+      </div>
+      <ng-content></ng-content>
+      <button class="btn btn-primary">{{btnPrimary}}</button>
+      <div class="auth-footer">
+      <small>{{ footerText }}</small>
+
+      <small><a [routerLink]="footerLink">
+        {{ footerLinkText }}
+      </a></small>
+      
     </div>
-    <button class="btn btn-secondary">{{btnSecondary}}</button>
-  </section>
-  <section class="image">
-    <img src="auth-image.svg" alt="Authentication image">
-  </section>
+    </section>
+    <section class="image">
+      <img src="auth-image.svg" alt="Authentication image">
+    </section>
+  </div>
 </main>

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('./styles/variables.css');
+@import url('./styles/global.css');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+}
+
+ul,li,a{
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}

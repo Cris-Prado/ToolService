@@ -1,0 +1,40 @@
+.sidebar {
+  position: fixed;
+
+  top: 64px;
+  left: 0;
+
+  width: 240px;
+
+  /* 100% da tela menos a navbar */
+  height: calc(100vh - 64px);
+
+  padding: 20px 16px;
+
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+
+  box-sizing: border-box;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.sidebar-nav a {
+  padding: 12px 16px;
+
+  border-radius: 8px;
+
+  color: #333;
+  text-decoration: none;
+
+  transition: background-color 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background-color: #f3f3f3;
+}

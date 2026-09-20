@@ -1,18 +1,16 @@
 <div class="content">
-  <label 
-    [attr.for]="id" 
-    class="label"
-    >
-    {{ label }}
-  </label>
+  <label [for]="inputName">{{ label }}</label>
   <div class="wrapper-inp">
-    <i class="{{ icon }}"></i>
+    <div class="icon">
+      <ng-content></ng-content>
+    </div>
     <input 
       [type]="type"
       [name]="name"
       [id]="id"
       [placeholder]="placeholder"
       class="input" 
+      required
     />
   </div>
 </div>

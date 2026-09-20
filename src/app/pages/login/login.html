@@ -1,25 +1,35 @@
 <app-auth-layout
-  title="Welcome Back"
-  subtitle="Please sign in to continue"
-  btnPrimary="Sign In"
-  btnSecondary="Register"
->
-  <form action="">
+  title="Login"
+  subtitle="Por favor, faça login para continuar."
+  btnPrimary="Entrar"
+  footerText="Não tem uma conta?"
+  footerLinkText="Cadastre-se aqui"
+  footerLink="/register"
+  >
+  <form action="" class="formulario">
     <app-input-label
       label="Email"
-      icon="fa fa-envelope"
       type="email"
       name="email"
       id="email"
-      placeholder="Enter your email"
-    ></app-input-label>
+      placeholder="Digite seu email">
+      <app-icon name="mail"></app-icon>
+    </app-input-label>
+
     <app-input-label
-      label="Password"
-      icon="fa fa-lock"
+      label="Senha"
       type="password"
       name="password"
       id="password"
-      placeholder="Enter your password"
-    ></app-input-label>
+      placeholder="Digite sua senha">
+      <app-icon name="lock"></app-icon>
+    </app-input-label>
+    <div class="remember">
+      <input
+        type="checkbox"
+        id="login-remember"
+        formControlName="rememberMe" />
+      <label for="login-remember">Lembrar-me</label>
+    </div>
   </form>
 </app-auth-layout>

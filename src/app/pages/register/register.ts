@@ -3,10 +3,11 @@ import { AuthLayout } from '../../layouts/auth-layout/auth-layout';
 import { InputLabel } from '../../components/input-label/input-label';
 import { Icon } from '../../components/icon/icon';
 
-@Component({  
-  selector: 'app-login',
-  imports: [AuthLayout, InputLabel, Icon],
-  templateUrl: './login.html',
-  styleUrl: './login.css',
+
+@Component({
+  selector: 'app-register',
+  imports: [ AuthLayout, InputLabel, Icon],
+  templateUrl: './register.html',
+  styleUrl: './register.css',
 })
-export class Login {}
+export class Register {}
